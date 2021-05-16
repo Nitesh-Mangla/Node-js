@@ -1,0 +1,4 @@
+Error: ER_ACCESS_DENIED_ERROR: Access denied for user 'username'@'localhost' (using password: YES)
+Error: ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client
+Error: ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client
+Error: getaddrinfo ENOTFOUND localhost:3306
