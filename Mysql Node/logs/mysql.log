@@ -2,3 +2,7 @@ Error: ER_ACCESS_DENIED_ERROR: Access denied for user 'username'@'localhost' (us
 Error: ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client
 Error: ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client
 Error: getaddrinfo ENOTFOUND localhost:3306
+Error: ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client
+Error: ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client
+Error: ER_BAD_DB_ERROR: Unknown database 'favcy-phalcon'
+Error: ER_BAD_DB_ERROR: Unknown database 'favcy_phalcon_widgets'

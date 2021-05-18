@@ -4,9 +4,9 @@ let fs = require("fs");
 class MysqlConnection {
 
   hostName = "localhost";
-  userName = "root";
-  password = "favcy@123";
-  dbName = "node_js_practice_1";
+  userName = "FavcyAdmin";
+  password = "AdminFavcy";
+  dbName = "favcy_phalcon_widget";
   mysqlInstance = null;
   logPath = "logs/mysql.log";
 
@@ -51,18 +51,36 @@ class MysqlConnection {
      this.mysqlInstance.query("SELECT "+columns + " from "+tableName, (err, rows, fields) => {
           if(!err) console.log(rows);
           else {
-            if(fs.existsSync("logs/mysqlQuerylog.log")) {
-              fs.appendFileSync("logs/mysqlQuerylog.log", err.toString()+"\n", (error) => {
+            if(fs.existsSync("logs/selectQuerylog.log")) {
+              fs.appendFileSync("logs/selectQuerylog.log", err.toString()+"\n", (error) => {
                 if(error) console.log(error);
               })
             } else {
-              fs.writeFileSync("logs/mysqlQuerylog.log", err.toString(), (queryerror) => {
+              fs.writeFileSync("logs/selectQuerylog.log", err.toString(), (queryerror) => {
                 if(queryerror) console.log(queryerror);
               })
             }
           }
           return rows;
       });
+  }
+
+  createRows(tableName, values) {
+    this.mysqlInstance.query("insert into " +tableName + "(otp_code, otp_mobile_cc, otp_mobile_num,otp_token, otp_status) VALUES( "+values+" )",
+          (err, rows, fields) => {
+            if(!err) console.log(rows);
+            else {
+              if(fs.existsSync("logs/createQueryLog.log")) {
+                fs.appendFileSync("logs/createQueryLog.log", err.toString()+"\n", (CreateError) => {
+                  if(CreateError) console.log(CreateError);
+                })
+              } else {
+                fs.writeFileSync("logs/createQueryLog.log", err.toString(), (error) => {
+                  if(error) console.log(error);
+                })
+              }
+            }
+      })
   }
  }
 module.exports = MysqlConnection;
